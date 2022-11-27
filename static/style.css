@@ -1,0 +1,83 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    /* background: #fccb90; */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1)); */
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 10%;
+    }
+    
+    .mask-custom {
+    background: rgba(24, 24, 16, .2);
+    border-radius: 2em;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    }
+    @media screen and (max-width: 1280px) { div.contentblock {width: 1200px;} } 
+    @media screen and (max-width: 1140px) { div.contentblock {width: 1024px;} } 
+    @media screen and (max-width: 992px) { div.contentblock {width: 970px;} } 
+h1 {
+    
+        display: flex;
+        justify-content: center;
+        height: 100%;
+}
+.hide{
+    display: none;
+    text-align: center;
+  }
+label{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* display: flex; */
+    cursor: pointer;
+    text-align: center;
+}
+
+.hover {
+    color: #0000;
+    background: 
+      linear-gradient(90deg,#ffffff 50%,#000 0) 
+      var(--_p,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    transition: 0.5s;
+    border: none;
+  }
+  .hover:hover {
+    --_p: 0%;
+  }
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-content: center;
+  }
+  h3 {
+    font-family:courier, courier new, serif;
+    font-size: 3rem;
+    margin:0;
+    cursor: pointer;
+    padding: 0 .1em;
+  }
+  button{
+    margin-top: 5%;
+  }
+  .btn{
+    /* background-color: rgba(28,28,28,0); */
+    border-width: 0px;
+  }
+  div {
+    border-width:0ch;
+    border: none;
+  }
