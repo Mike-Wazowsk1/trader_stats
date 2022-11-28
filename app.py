@@ -43,4 +43,4 @@ def download_file(name):
     new_path = name[:-4] +".pdf"
     return send_from_directory(app.config["UPLOAD_FOLDER"], new_path)  # type: ignore
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',debug=True)

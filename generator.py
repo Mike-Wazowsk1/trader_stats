@@ -70,7 +70,6 @@ class PDF:
         tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/tmp_df['balance'][0] 
         self.tmp_df = tmp_df
         self.downturn_df = self.count_downturns(tmp_df)
-        print(self.downturn_df)
 
         balance_df = tmp_df.groupby(tmp_df.Time.dt.date)['balance'].mean()
         ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['return_ptc'].mean()
@@ -306,50 +305,61 @@ class PDF:
                 plt.figure(figsize=(20,15))
                 plt.grid(axis='x')
                 plt.grid(axis='y')
-                plt.ylabel('%')
-                plt.title("Max Downturns")
-                print("YAAURI")
+                
                 # self.downturn_df = self.downturn_df.dropna()
                 # self.downturn_df.Downturn_pct.plot.bar()
-                print(type(self.downturn_df.Time))
-                plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_pct)
+                try:
+                    plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_pct)
+                    plt.ylabel('%')
+                    plt.title("Max Downturns")
+                    plot.add_plot()
+                    plt.close()
+                except:
+                    plot.add_plot()
+                    plt.title("NO DATA")
+                    plt.close()
 
-                print("Bare")
-                plot.add_plot()
-                print(self.downturn_df)
-                plt.close()
+
+                
             with doc.create(Figure(position='htbp')) as plot:
                 plt.figure(figsize=(20,15))
                 plt.grid(axis='x')
                 plt.grid(axis='y')
-                plt.ylabel('Dollars')
-                plt.title("Max Downturns")
-                print("YAAURI")
+
                 # self.downturn_df = self.downturn_df.dropna()
                 # self.downturn_df.Downturn_pct.plot.bar()
-                print(type(self.downturn_df.Time))
-                plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
-                plt.xticks(rotate=90)
+                try:
+                    plt.ylabel('Dollars')
+                    plt.title("Max Downturns")
+                    plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
+                    plot.add_plot()
+                    plt.close()
+                except:
+                    plot.add_plot()
+                    plt.title("NO DATA")
+                    plt.close()
 
-                print("Bare")
-                plot.add_plot()
-                print(self.downturn_df)
-                plt.close()
+
+                
 
         
     def count_downturns(self,df):
         df = df.copy()
         for symbol in df.Symbol.unique():
+            print(symbol)
             try:
                 search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
             except:
                 continue
+            df.loc[:,'Downturn_pct'] = 0
+            df.loc[:,'Downturn_cash'] = 0
+
+
             crop_df = df.loc[df.Symbol==f'{symbol}']    
             crop_df = crop_df.reset_index(drop=True,)
             crop_df = crop_df[["Type","Time",'Time.1','Price',"Price.1","ret","balance",'amount']]
             crop_df.columns = ['side','start_time','end_time','start_price','end_price','profit','balance','amount']  # type: ignore
             for row in crop_df.itertuples():
-                
                 start_time= row.start_time
                 end_time = row.end_time
                 start_price = row.start_price
@@ -409,6 +419,4 @@ class PDF:
         self.fill_document(doc)
         new_path = f'uploads/{self.path[:-4]}'
         doc.generate_pdf(new_path, clean_tex=True)
-        print("-"*100)
-        print(new_path)
         return new_path
