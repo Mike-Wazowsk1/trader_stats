@@ -64,13 +64,11 @@ class PDF:
         # tmp_df.loc[0,'ret'] = 0
 
         tmp_df['balance'] = tmp_df['ret'].cumsum()
-        tmp_df['return_ptc'] = tmp_df['ret']* 100/tmp_df.amount 
+        tmp_df.loc[0,'ret'] = 0
+        tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/tmp_df['balance'][0] 
 
-        tmp_df['ptc'] = (tmp_df['ret']/tmp_df.Profit[0]) * 100
-        tmp_df.loc[0,'ptc'] = 0
-        tmp_df['ptc_all'] = tmp_df.ptc.cumsum()
         balance_df = tmp_df.groupby(tmp_df.Time.dt.date)['balance'].mean()
-        ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['ptc_all'].mean()
+        ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['return_ptc'].mean()
         
 
         with doc.create(Section('Balance overview')):
