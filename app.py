@@ -3,7 +3,7 @@ import os
 from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from generator import PDF
-import time
+
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'csv'}
 
@@ -44,6 +44,4 @@ def download_file(name):
     new_path = name[:-4] +".pdf"
     return send_from_directory(app.config["UPLOAD_FOLDER"], new_path)  # type: ignore
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app)
-    
+    app.run(host='0.0.0.0')

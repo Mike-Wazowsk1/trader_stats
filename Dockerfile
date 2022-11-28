@@ -8,4 +8,5 @@ WORKDIR /app/
 COPY . .
 RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD [ "flask", "run","--host","0.0.0.0","--port","5000"]
+RUN export FLASK_APP=app.py
+CMD [ "flask", "run","-h","95-163-235-201","-p","5000"]

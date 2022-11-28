@@ -56,10 +56,44 @@ class PDF:
 
         min_down_by_hour =  df.groupby(df.Time.dt.hour)['Profit'].min().to_latex()
         min_down_by_hour_pd =  df.groupby(df.Time.dt.hour)['Profit'].min()
-        
+        tmp_df = df.sort_values("Time").copy()
+        tmp_df.reset_index(drop=True,inplace=True)
+        tmp_df = tmp_df.fillna(0)
+        tmp_df['ret'] = tmp_df['Profit']+tmp_df['Commission'] + tmp_df['Swap']
+        tmp_df['amount'] = abs(tmp_df['Profit'] /(tmp_df['Price']-tmp_df['Price.1']))
+        # tmp_df.loc[0,'ret'] = 0
+
+        tmp_df['balance'] = tmp_df['ret'].cumsum()
+        tmp_df['return_ptc'] = tmp_df['ret']* 100/tmp_df.amount 
+
+        tmp_df['ptc'] = (tmp_df['ret']/tmp_df.Profit[0]) * 100
+        tmp_df.loc[0,'ptc'] = 0
+        tmp_df['ptc_all'] = tmp_df.ptc.cumsum()
+        balance_df = tmp_df.groupby(tmp_df.Time.dt.date)['balance'].mean()
+        ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['ptc_all'].mean()
         
 
-    
+        with doc.create(Section('Balance overview')):
+            with doc.create(Figure(position='htbp')) as plot:
+                plt.figure(figsize=(20,8))
+                plt.plot(balance_df,linewidth=3,color='#02bfe0')
+                plt.ylabel("Dollars")
+                plt.xlabel("Date")
+                plt.grid(axis='y')
+                plot.add_plot()
+                plt.close()
+
+            with doc.create(Figure(position='htbp')) as plot:
+                plt.figure(figsize=(20,8))
+                plt.plot(ptc_df,linewidth=3,color='#02bfe0')
+                plt.ylabel("%")
+                plt.xlabel("Date")
+                plt.grid(axis='y')
+                plot.add_plot()
+                plt.close()
+
+
+
 
 
         with doc.create(Section('By symbol')):
@@ -72,7 +106,7 @@ class PDF:
                     mask1 = df[df.Profit > 0]
                     mask2 = df[df.Profit < 0]
                     plt.figure(figsize=(20,15))
-                    bar = plt.bar(mask1.index,mask1.Profit,color='limegreen')
+                    plt.bar(mask1.index,mask1.Profit,color='limegreen')
                     plt.bar(mask2.index,mask2.Profit,color='lightcoral')
 
                     plt.xticks(rotation=90)
