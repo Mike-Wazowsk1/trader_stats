@@ -36,28 +36,35 @@ class PDF:
         plt.rc('legend', fontsize=20)    
         plt.rcParams['axes.titlesize'] = 45
 
-        min_down_by_symbol = df.groupby(df.Symbol)['Profit'].min(numeric_only=True).sort_values(ascending=False).to_latex()
         min_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].min(numeric_only=True).sort_values(ascending=False)
+        min_down_by_symbol = min_down_by_symbol_pd.to_latex()
+
 
         
 
-        mean_down_by_symbol = df.groupby(df.Symbol)['Profit'].mean(numeric_only=True).sort_values(ascending=False).to_latex()
+        
         mean_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].mean(numeric_only=True).sort_values(ascending=False)
+        mean_down_by_symbol = mean_down_by_symbol_pd.to_latex()
 
         
 
-        mean_down_by_day =  df.groupby(df.Time.dt.day_name())['Profit'].mean().to_latex()
+        
         mean_down_by_day_pd =  df.groupby(df.Time.dt.day_name())['Profit'].mean()
+        mean_down_by_day =  mean_down_by_day_pd.to_latex()
 
-        min_down_by_day =  df.groupby(df.Time.dt.day_name())['Profit'].min().to_latex()
+        
         min_down_by_day_pd =  df.groupby(df.Time.dt.day_name())['Profit'].min()
+        min_down_by_day =  min_down_by_day_pd.to_latex()
 
 
-        mean_down_by_hour =  df.groupby(df.Time.dt.hour)['Profit'].mean().to_latex()
         mean_down_by_hour_pd =  df.groupby(df.Time.dt.hour)['Profit'].mean()
+        mean_down_by_hour = mean_down_by_hour_pd.to_latex()
 
-        min_down_by_hour =  df.groupby(df.Time.dt.hour)['Profit'].min().to_latex()
+
+        
         min_down_by_hour_pd =  df.groupby(df.Time.dt.hour)['Profit'].min()
+        min_down_by_hour =  min_down_by_hour_pd.to_latex()
+
         tmp_df = df.sort_values("Time").copy()
         tmp_df.reset_index(drop=True,inplace=True)
         tmp_df = tmp_df.fillna(0)
@@ -299,7 +306,7 @@ class PDF:
                     plot.add_plot()
                     plt.close()
 
-
+        doc.append(NoEscape('\\newpage '))
         with doc.create(Section("Downturns")):
             with doc.create(Figure(position='htbp')) as plot:
                 plt.figure(figsize=(20,15))
@@ -351,7 +358,7 @@ class PDF:
                 search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
             except:
                 continue
-            df.loc[:,'Downturn_pct'] = 0
+            df.loc[:,'Downturn_pct'] = 0 
             df.loc[:,'Downturn_cash'] = 0
 
 
