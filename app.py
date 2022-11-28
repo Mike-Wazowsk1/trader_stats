@@ -40,7 +40,6 @@ def download_file(name):
         new_path = pdf.generate_pdf() + '.pdf'
     except:
         pass
-    # time.sleep(3)
     new_path = name[:-4] +".pdf"
     return send_from_directory(app.config["UPLOAD_FOLDER"], new_path)  # type: ignore
 if __name__ == "__main__":

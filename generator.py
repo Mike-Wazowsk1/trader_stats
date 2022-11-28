@@ -5,6 +5,8 @@ import pylatex as pl
 import pandas as pd
 import matplotlib.pyplot as plt  # noqa
 from pylatex import Document, Section, Figure, NoEscape
+import warnings
+warnings.filterwarnings("ignore")
 import matplotlib
 matplotlib.use('Agg')  # Not to use X server. For TravisCI.
 
@@ -18,7 +20,7 @@ matplotlib.use('Agg')  # Not to use X server. For TravisCI.
 class PDF:
     def __init__(self,path):
         self.path = path
-        self.df = pd.read_csv(f'uploads/{self.path}',header=0,sep=';',parse_dates=['Time'])
+        self.df = pd.read_csv(f'uploads/{self.path}',header=0,sep=';',parse_dates=['Time',"Time.1"]).sort_values("Time")
 
     def fill_document(self,doc):
 
@@ -66,6 +68,9 @@ class PDF:
         tmp_df['balance'] = tmp_df['ret'].cumsum()
         tmp_df.loc[0,'ret'] = 0
         tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/tmp_df['balance'][0] 
+        self.tmp_df = tmp_df
+        self.downturn_df = self.count_downturns(tmp_df)
+        print(self.downturn_df)
 
         balance_df = tmp_df.groupby(tmp_df.Time.dt.date)['balance'].mean()
         ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['return_ptc'].mean()
@@ -294,6 +299,102 @@ class PDF:
 
                     plot.add_plot()
                     plt.close()
+
+
+        with doc.create(Section("Downturns")):
+            with doc.create(Figure(position='htbp')) as plot:
+                plt.figure(figsize=(20,15))
+                plt.grid(axis='x')
+                plt.grid(axis='y')
+                plt.ylabel('%')
+                plt.title("Max Downturns")
+                print("YAAURI")
+                # self.downturn_df = self.downturn_df.dropna()
+                # self.downturn_df.Downturn_pct.plot.bar()
+                print(type(self.downturn_df.Time))
+                plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_pct)
+
+                print("Bare")
+                plot.add_plot()
+                print(self.downturn_df)
+                plt.close()
+            with doc.create(Figure(position='htbp')) as plot:
+                plt.figure(figsize=(20,15))
+                plt.grid(axis='x')
+                plt.grid(axis='y')
+                plt.ylabel('Dollars')
+                plt.title("Max Downturns")
+                print("YAAURI")
+                # self.downturn_df = self.downturn_df.dropna()
+                # self.downturn_df.Downturn_pct.plot.bar()
+                print(type(self.downturn_df.Time))
+                plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
+                plt.xticks(rotate=90)
+
+                print("Bare")
+                plot.add_plot()
+                print(self.downturn_df)
+                plt.close()
+
+        
+    def count_downturns(self,df):
+        df = df.copy()
+        for symbol in df.Symbol.unique():
+            try:
+                search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
+            except:
+                continue
+            crop_df = df.loc[df.Symbol==f'{symbol}']    
+            crop_df = crop_df.reset_index(drop=True,)
+            crop_df = crop_df[["Type","Time",'Time.1','Price',"Price.1","ret","balance",'amount']]
+            crop_df.columns = ['side','start_time','end_time','start_price','end_price','profit','balance','amount']  # type: ignore
+            for row in crop_df.itertuples():
+                
+                start_time= row.start_time
+                end_time = row.end_time
+                start_price = row.start_price
+
+                side = row.side
+                
+                amount = row.amount
+                balance = row.balance
+                idx = row.Index
+                down,dollar = self.find_downturns(search_df,start_time,end_time,start_price,side,amount,balance)
+                
+                if down:
+                    df.loc[idx,'Downturn_pct'] = max(down)
+                    df.loc[idx,'Downturn_cash'] = max(dollar)
+                else:
+                    df.loc[idx,'Downturn_pct'] = 0
+                    df.loc[idx,'Downturn_cash'] = 0
+            
+        return df
+        
+
+
+            
+
+    def find_downturns(self,search_df,start_time,end_time,start_price,side,amount,balance):
+        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)]
+        downs = []
+        dollars = []
+
+        for row in search_set.itertuples(index=False):
+
+            if side == 'Buy':
+                downs.append(
+                    round((start_price*amount-row.low*amount)/balance*100,4)
+                )
+                dollars.append(start_price*amount - row.low*amount)
+            elif side == 'Sell':
+                downs.append(
+                    round((row.high*amount - start_price*amount)/balance*100,4)
+                )
+                dollars.append(row.high*amount - start_price*amount)
+                
+        return downs,dollars
+
+
                     
 
     def generate_pdf(self):    
