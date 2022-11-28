@@ -395,19 +395,25 @@ class PDF:
         search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)]
         downs = []
         dollars = []
-
-        for row in search_set.itertuples(index=False):
-
+        print(search_set)
+        for row in search_set.values:
+            print(row)
+            open_price = row[1]
+            high = row[2]
+            low = row[3]
+            close = row[4]
+            volume = row[5]
+            # time, open high low close volume
             if side == 'Buy':
                 downs.append(
-                    round((start_price*amount-row.low*amount)/balance*100,4)
+                    round((start_price*amount-low*amount)/balance*100,4)
                 )
-                dollars.append(start_price*amount - row.low*amount)
+                dollars.append(start_price*amount - low*amount)
             elif side == 'Sell':
                 downs.append(
-                    round((row.high*amount - start_price*amount)/balance*100,4)
+                    round((high*amount - start_price*amount)/balance*100,4)
                 )
-                dollars.append(row.high*amount - start_price*amount)
+                dollars.append(high*amount - start_price*amount)
                 
         return downs,dollars
 
