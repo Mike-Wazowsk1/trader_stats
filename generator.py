@@ -353,7 +353,6 @@ class PDF:
     def count_downturns(self,df):
         df = df.copy()
         for symbol in df.Symbol.unique():
-            print(symbol)
             try:
                 search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
             except:
@@ -395,9 +394,7 @@ class PDF:
         search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)]
         downs = []
         dollars = []
-        print(search_set)
         for row in search_set.values:
-            print(row)
             open_price = row[1]
             high = row[2]
             low = row[3]
