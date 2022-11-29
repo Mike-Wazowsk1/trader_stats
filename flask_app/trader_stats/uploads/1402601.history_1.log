@@ -1,0 +1,762 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  29 NOV 2022 20:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/home/flask_app/trader_stats/uploads/1402601.history_1.tex
+(/home/flask_app/trader_stats/uploads/1402601.history_1.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count175
+\Gm@cntv=\count176
+\c@Gm@tempcnt=\count177
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count178
+\l__pdf_internal_box=\box45
+)
+(./1402601.history_1.aux
+
+LaTeX Warning: Label `subsec:Minimumprofit' multiply defined.
+
+
+LaTeX Warning: Label `subsec:Meanprofit' multiply defined.
+
+
+LaTeX Warning: Label `subsec:Minimumprofit' multiply defined.
+
+
+LaTeX Warning: Label `subsec:Meanprofit' multiply defined.
+
+)
+\openout1 = `1402601.history_1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 15
+.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 15.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=556.47656pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count179
+\scratchdimen=\dimen145
+\scratchbox=\box46
+\nofMPsegments=\count180
+\nofMParguments=\count181
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count182
+\MPscratchDim=\dimen146
+\MPnumerator=\count183
+\makeMPintoPDFobject=\count184
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+7.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+7.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+17.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+17.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 17.
+</tmp/pylatex-tmp.wui6ez4j/77772f53-8fe5-4313-8474-7a8c371dd352.pdf, id=1, 1445
+.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/77772f53-8fe5-4313-8474-7a8c371dd352.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/77772f53-8fe5-4313-8474-7a8c371dd352.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/77772f53-8fe5-4313-8474-7a8c
+371dd352.pdf  used on input line 24.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/bba23228-8e97-4784-b280-1157d70e6330.pdf, id=2, 1445
+.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/bba23228-8e97-4784-b280-1157d70e6330.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/bba23228-8e97-4784-b280-1157d70e6330.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/bba23228-8e97-4784-b280-1157
+d70e6330.pdf  used on input line 32.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 40.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 40.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 40.
+
+! Undefined control sequence.
+l.41 \toprule
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.44 \midrule
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.56 \bottomrule
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/74b06cb2-117c-449f-bd3c-7a32342f8639.pdf, id=3, 1445
+.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/74b06cb2-117c-449f-bd3c-7a32342f8639.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/74b06cb2-117c-449f-bd3c-7a32342f8639.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/74b06cb2-117c-449f-bd3c-7a32
+342f8639.pdf  used on input line 63.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </tmp/pylatex-tmp.wui6ez4j/
+77772f53-8fe5-4313-8474-7a8c371dd352.pdf> </tmp/pylatex-tmp.wui6ez4j/bba23228-8
+e97-4784-b280-1157d70e6330.pdf>] [2 </tmp/pylatex-tmp.wui6ez4j/74b06cb2-117c-44
+9f-bd3c-7a32342f8639.pdf>]
+! Undefined control sequence.
+l.71 \toprule
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.74 \midrule
+             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.86 \bottomrule
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/be194821-70f0-4b22-9fe5-2eee7a5e1ec8.pdf, id=102, 14
+45.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/be194821-70f0-4b22-9fe5-2eee7a5e1ec8.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/be194821-70f0-4b22-9fe5-2eee7a5e1ec8.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/be194821-70f0-4b22-9fe5-2eee
+7a5e1ec8.pdf  used on input line 93.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[3 </tmp/pylatex-tmp.wui6ez4j/be194821-70f0-4b22-9fe5-2eee7a5e1ec8.pdf>]
+! Undefined control sequence.
+l.103 \toprule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.106 \midrule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.114 \bottomrule
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/577456db-87eb-4b2d-938f-b5cc06d3eba3.pdf, id=145, 14
+45.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/577456db-87eb-4b2d-938f-b5cc06d3eba3.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/577456db-87eb-4b2d-938f-b5cc06d3eba3.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/577456db-87eb-4b2d-938f-b5cc
+06d3eba3.pdf  used on input line 121.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[4 </tmp/pylatex-tmp.wui6ez4j/577456db-87eb-4b2d-938f-b5cc06d3eba3.pdf>]
+! Undefined control sequence.
+l.129 \toprule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.132 \midrule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.140 \bottomrule
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/823e84cd-3798-42c7-80b7-a0d1ff327da5.pdf, id=181, 14
+45.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/823e84cd-3798-42c7-80b7-a0d1ff327da5.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/823e84cd-3798-42c7-80b7-a0d1ff327da5.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/823e84cd-3798-42c7-80b7-a0d1
+ff327da5.pdf  used on input line 147.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[5 </tmp/pylatex-tmp.wui6ez4j/823e84cd-3798-42c7-80b7-a0d1ff327da5.pdf>]
+! Undefined control sequence.
+l.157 \toprule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.160 \midrule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.185 \bottomrule
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/9431ef97-2591-4b93-8a9d-74b1b52efca3.pdf, id=218, 14
+45.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/9431ef97-2591-4b93-8a9d-74b1b52efca3.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/9431ef97-2591-4b93-8a9d-74b1b52efca3.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/9431ef97-2591-4b93-8a9d-74b1
+b52efca3.pdf  used on input line 192.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[6] [7 </tmp/pylatex-tmp.wui6ez4j/9431ef97-2591-4b93-8a9d-74b1b52efca3.pdf>]
+! Undefined control sequence.
+l.200 \toprule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.203 \midrule
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.228 \bottomrule
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+</tmp/pylatex-tmp.wui6ez4j/60d2da62-0556-4cb8-8c89-29ada55df9a4.pdf, id=255, 14
+45.4pt x 1084.05pt>
+File: /tmp/pylatex-tmp.wui6ez4j/60d2da62-0556-4cb8-8c89-29ada55df9a4.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/60d2da62-0556-4cb8-8c89-29ada55df9a4.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/60d2da62-0556-4cb8-8c89-29ad
+a55df9a4.pdf  used on input line 235.
+(pdftex.def)             Requested size: 400.38872pt x 300.28984pt.
+[8] [9 </tmp/pylatex-tmp.wui6ez4j/60d2da62-0556-4cb8-8c89-29ada55df9a4.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/1dd88351-bd08-4378-882e-60ade1a218e6.pdf, id=292, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/1dd88351-bd08-4378-882e-60ade1a218e6.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/1dd88351-bd08-4378-882e-60ade1a218e6.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/1dd88351-bd08-4378-882e-60ad
+e1a218e6.pdf  used on input line 248.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/6c449ba3-9867-405e-b993-585e5dbaa394.pdf, id=293, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/6c449ba3-9867-405e-b993-585e5dbaa394.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/6c449ba3-9867-405e-b993-585e5dbaa394.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/6c449ba3-9867-405e-b993-585e
+5dbaa394.pdf  used on input line 256.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+
+[10 </tmp/pylatex-tmp.wui6ez4j/1dd88351-bd08-4378-882e-60ade1a218e6.pdf> </tmp/
+pylatex-tmp.wui6ez4j/6c449ba3-9867-405e-b993-585e5dbaa394.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/42abc29c-770b-4755-8d38-ec986e9a1b38.pdf, id=363, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/42abc29c-770b-4755-8d38-ec986e9a1b38.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/42abc29c-770b-4755-8d38-ec986e9a1b38.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/42abc29c-770b-4755-8d38-ec98
+6e9a1b38.pdf  used on input line 267.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/7af4527d-9d0f-41d6-a4d4-ff7b16af4965.pdf, id=364, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/7af4527d-9d0f-41d6-a4d4-ff7b16af4965.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/7af4527d-9d0f-41d6-a4d4-ff7b16af4965.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/7af4527d-9d0f-41d6-a4d4-ff7b
+16af4965.pdf  used on input line 275.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [11 </tmp/pylatex-tmp.wui6ez4j/42abc29c-770b-4755-8d38-ec986e9a1b38.pdf> </tmp
+/pylatex-tmp.wui6ez4j/7af4527d-9d0f-41d6-a4d4-ff7b16af4965.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/14bca63a-4746-43aa-b758-8325c9d1ecb9.pdf, id=429, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/14bca63a-4746-43aa-b758-8325c9d1ecb9.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/14bca63a-4746-43aa-b758-8325c9d1ecb9.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/14bca63a-4746-43aa-b758-8325
+c9d1ecb9.pdf  used on input line 286.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/bab48cd7-07b3-4c93-b297-731d70cf9d57.pdf, id=430, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/bab48cd7-07b3-4c93-b297-731d70cf9d57.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/bab48cd7-07b3-4c93-b297-731d70cf9d57.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/bab48cd7-07b3-4c93-b297-731d
+70cf9d57.pdf  used on input line 294.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [12 </tmp/pylatex-tmp.wui6ez4j/14bca63a-4746-43aa-b758-8325c9d1ecb9.pdf> </tmp
+/pylatex-tmp.wui6ez4j/bab48cd7-07b3-4c93-b297-731d70cf9d57.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/82787f51-ba38-493b-9bff-e7621528f813.pdf, id=500, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/82787f51-ba38-493b-9bff-e7621528f813.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/82787f51-ba38-493b-9bff-e7621528f813.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/82787f51-ba38-493b-9bff-e762
+1528f813.pdf  used on input line 305.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/71b25682-5218-4465-9fb0-e5239ecf6d18.pdf, id=501, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/71b25682-5218-4465-9fb0-e5239ecf6d18.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/71b25682-5218-4465-9fb0-e5239ecf6d18.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/71b25682-5218-4465-9fb0-e523
+9ecf6d18.pdf  used on input line 313.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [13 </tmp/pylatex-tmp.wui6ez4j/82787f51-ba38-493b-9bff-e7621528f813.pdf> </tmp
+/pylatex-tmp.wui6ez4j/71b25682-5218-4465-9fb0-e5239ecf6d18.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/573779b7-74a0-4f12-96dd-31c7d5e59ac9.pdf, id=555, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/573779b7-74a0-4f12-96dd-31c7d5e59ac9.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/573779b7-74a0-4f12-96dd-31c7d5e59ac9.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/573779b7-74a0-4f12-96dd-31c7
+d5e59ac9.pdf  used on input line 324.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/b8fb2432-6dff-49c7-a9c9-b352cdc6064b.pdf, id=556, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/b8fb2432-6dff-49c7-a9c9-b352cdc6064b.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/b8fb2432-6dff-49c7-a9c9-b352cdc6064b.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/b8fb2432-6dff-49c7-a9c9-b352
+cdc6064b.pdf  used on input line 332.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [14 </tmp/pylatex-tmp.wui6ez4j/573779b7-74a0-4f12-96dd-31c7d5e59ac9.pdf> </tmp
+/pylatex-tmp.wui6ez4j/b8fb2432-6dff-49c7-a9c9-b352cdc6064b.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/09ace8c2-3d66-4929-921d-c33ff59ec504.pdf, id=625, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/09ace8c2-3d66-4929-921d-c33ff59ec504.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/09ace8c2-3d66-4929-921d-c33ff59ec504.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/09ace8c2-3d66-4929-921d-c33f
+f59ec504.pdf  used on input line 343.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/a9483398-60e9-4078-9f5e-6f422e7f0c80.pdf, id=626, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/a9483398-60e9-4078-9f5e-6f422e7f0c80.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/a9483398-60e9-4078-9f5e-6f422e7f0c80.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/a9483398-60e9-4078-9f5e-6f42
+2e7f0c80.pdf  used on input line 351.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [15 </tmp/pylatex-tmp.wui6ez4j/09ace8c2-3d66-4929-921d-c33ff59ec504.pdf> </tmp
+/pylatex-tmp.wui6ez4j/a9483398-60e9-4078-9f5e-6f422e7f0c80.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/a43cc4fe-466f-4e9c-8517-534e572b07fe.pdf, id=674, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/a43cc4fe-466f-4e9c-8517-534e572b07fe.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/a43cc4fe-466f-4e9c-8517-534e572b07fe.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/a43cc4fe-466f-4e9c-8517-534e
+572b07fe.pdf  used on input line 362.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/8fd2f262-4c53-47a0-910b-c7670c73c3f4.pdf, id=675, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/8fd2f262-4c53-47a0-910b-c7670c73c3f4.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/8fd2f262-4c53-47a0-910b-c7670c73c3f4.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/8fd2f262-4c53-47a0-910b-c767
+0c73c3f4.pdf  used on input line 370.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [16 </tmp/pylatex-tmp.wui6ez4j/a43cc4fe-466f-4e9c-8517-534e572b07fe.pdf> </tmp
+/pylatex-tmp.wui6ez4j/8fd2f262-4c53-47a0-910b-c7670c73c3f4.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/49e1aa83-0c2f-41ff-80fa-61e4da2190f4.pdf, id=723, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/49e1aa83-0c2f-41ff-80fa-61e4da2190f4.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/49e1aa83-0c2f-41ff-80fa-61e4da2190f4.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/49e1aa83-0c2f-41ff-80fa-61e4
+da2190f4.pdf  used on input line 381.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/e654e1d2-ec59-4c9e-b967-03afd2558419.pdf, id=724, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/e654e1d2-ec59-4c9e-b967-03afd2558419.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/e654e1d2-ec59-4c9e-b967-03afd2558419.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/e654e1d2-ec59-4c9e-b967-03af
+d2558419.pdf  used on input line 389.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [17 </tmp/pylatex-tmp.wui6ez4j/49e1aa83-0c2f-41ff-80fa-61e4da2190f4.pdf> </tmp
+/pylatex-tmp.wui6ez4j/e654e1d2-ec59-4c9e-b967-03afd2558419.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/d239f1f5-7d16-4c93-b59d-4b63c5fb07ac.pdf, id=795, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/d239f1f5-7d16-4c93-b59d-4b63c5fb07ac.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/d239f1f5-7d16-4c93-b59d-4b63c5fb07ac.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/d239f1f5-7d16-4c93-b59d-4b63
+c5fb07ac.pdf  used on input line 400.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/896a9b56-ec40-4938-934b-faf9c3ec53dc.pdf, id=796, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/896a9b56-ec40-4938-934b-faf9c3ec53dc.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/896a9b56-ec40-4938-934b-faf9c3ec53dc.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/896a9b56-ec40-4938-934b-faf9
+c3ec53dc.pdf  used on input line 408.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [18 </tmp/pylatex-tmp.wui6ez4j/d239f1f5-7d16-4c93-b59d-4b63c5fb07ac.pdf> </tmp
+/pylatex-tmp.wui6ez4j/896a9b56-ec40-4938-934b-faf9c3ec53dc.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/799ea5ff-cfa0-4c16-8c09-ee1b2f4a4e72.pdf, id=846, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/799ea5ff-cfa0-4c16-8c09-ee1b2f4a4e72.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/799ea5ff-cfa0-4c16-8c09-ee1b2f4a4e72.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/799ea5ff-cfa0-4c16-8c09-ee1b
+2f4a4e72.pdf  used on input line 419.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/e5c56404-c3e3-4127-a543-32b515666964.pdf, id=847, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/e5c56404-c3e3-4127-a543-32b515666964.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/e5c56404-c3e3-4127-a543-32b515666964.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/e5c56404-c3e3-4127-a543-32b5
+15666964.pdf  used on input line 427.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [19 </tmp/pylatex-tmp.wui6ez4j/799ea5ff-cfa0-4c16-8c09-ee1b2f4a4e72.pdf> </tmp
+/pylatex-tmp.wui6ez4j/e5c56404-c3e3-4127-a543-32b515666964.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/ce1ab6c1-4662-4bcc-9b43-6406a5484522.pdf, id=915, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/ce1ab6c1-4662-4bcc-9b43-6406a5484522.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/ce1ab6c1-4662-4bcc-9b43-6406a5484522.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/ce1ab6c1-4662-4bcc-9b43-6406
+a5484522.pdf  used on input line 438.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/7536c01b-8b9c-459d-949b-276c726f0261.pdf, id=916, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/7536c01b-8b9c-459d-949b-276c726f0261.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/7536c01b-8b9c-459d-949b-276c726f0261.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/7536c01b-8b9c-459d-949b-276c
+726f0261.pdf  used on input line 446.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+ [20 </tmp/pylatex-tmp.wui6ez4j/ce1ab6c1-4662-4bcc-9b43-6406a5484522.pdf> </tmp
+/pylatex-tmp.wui6ez4j/7536c01b-8b9c-459d-949b-276c726f0261.pdf>]
+</tmp/pylatex-tmp.wui6ez4j/6a0ab658-94cb-409a-afa2-29cacf47fce1.pdf, id=966, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/6a0ab658-94cb-409a-afa2-29cacf47fce1.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/6a0ab658-94cb-409a-afa2-29cacf47fce1.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/6a0ab658-94cb-409a-afa2-29ca
+cf47fce1.pdf  used on input line 457.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+</tmp/pylatex-tmp.wui6ez4j/40222c71-1a25-415d-8541-a896cf762bd9.pdf, id=967, 14
+45.4pt x 578.16pt>
+File: /tmp/pylatex-tmp.wui6ez4j/40222c71-1a25-415d-8541-a896cf762bd9.pdf Graphi
+c file (type pdf)
+<use /tmp/pylatex-tmp.wui6ez4j/40222c71-1a25-415d-8541-a896cf762bd9.pdf>
+Package pdftex.def Info: /tmp/pylatex-tmp.wui6ez4j/40222c71-1a25-415d-8541-a896
+cf762bd9.pdf  used on input line 465.
+(pdftex.def)             Requested size: 400.38872pt x 160.15457pt.
+
+
+AED: lastpage setting LastPage
+[21 </tmp/pylatex-tmp.wui6ez4j/6a0ab658-94cb-409a-afa2-29cacf47fce1.pdf> </tmp/
+pylatex-tmp.wui6ez4j/40222c71-1a25-415d-8541-a896cf762bd9.pdf>]
+(./1402601.history_1.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2297 strings out of 483183
+ 43630 string characters out of 5966291
+ 262687 words of memory out of 5000000
+ 17263 multiletter control sequences out of 15000+600000
+ 572911 words of font info for 50 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 30i,6n,25p,258b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
+public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr17.pfb>
+Output written on 1402601.history_1.pdf (21 pages, 444903 bytes).
+PDF statistics:
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+
