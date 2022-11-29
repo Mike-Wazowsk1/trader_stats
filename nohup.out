@@ -1,0 +1,14 @@
+ * Serving Flask app 'app.py'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://95-163-235-201:5000
+[33mPress CTRL+C to quit[0m
+109.126.152.160 - - [27/Nov/2022 09:20:24] "GET / HTTP/1.1" 200 -
+109.126.152.160 - - [27/Nov/2022 09:20:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+109.126.152.160 - - [27/Nov/2022 09:20:26] "GET / HTTP/1.1" 200 -
+109.126.152.160 - - [27/Nov/2022 09:20:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+ * Serving Flask app 'app.py'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://95-163-235-201:5000
+[33mPress CTRL+C to quit[0m
