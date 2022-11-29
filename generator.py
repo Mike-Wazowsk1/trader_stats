@@ -396,7 +396,7 @@ class PDF:
         df = df.loc[df.Symbol!=0]
         
         try:
-            search_df = pd.read_csv(f"data/{symbol}.csv",parse_dates=['date'], header=0)
+            search_df = pd.read_parquet(f"data/{symbol}.parquet",parse_dates=['date'], header=0)
         except:
             return
 
