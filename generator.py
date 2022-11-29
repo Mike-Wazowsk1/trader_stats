@@ -76,7 +76,7 @@ class PDF:
         tmp_df.loc[0,'ret'] = 0
         tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/tmp_df['balance'][0] 
         self.tmp_df = tmp_df
-        self.downturn_df = self.count_downturns(tmp_df)
+        self.symbols  = tmp_df.groupby("Symbol")
 
         balance_df = tmp_df.groupby(tmp_df.Time.dt.date)['balance'].mean()
         ptc_df = tmp_df.groupby(tmp_df.Time.dt.date)['return_ptc'].mean()
@@ -308,82 +308,89 @@ class PDF:
 
         doc.append(NoEscape('\\newpage '))
         with doc.create(Section("Downturns")):
-            with doc.create(Figure(position='htbp')) as plot:
-                plt.figure(figsize=(20,15))
-                plt.grid(axis='x')
-                plt.grid(axis='y')
-                
-                # self.downturn_df = self.downturn_df.dropna()
-                # self.downturn_df.Downturn_pct.plot.bar()
-                try:
-                    plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_pct)
-                    plt.ylabel('%')
-                    plt.title("Max Downturns")
-                    plot.add_plot()
-                    plt.close()
-                except:
-                    plot.add_plot()
-                    plt.title("NO DATA")
-                    plt.close()
+            for symbol in self.symbols.groups:
+                if type(symbol) == str:
+                    df = self.symbols.get_group(symbol).reset_index(drop=True)
+                    downturn_df = self.count_downturns(df,symbol)
+                    print(downturn_df)
+                    with doc.create(Figure(position='htbp')) as plot:
+                        plt.figure(figsize=(20,15))
+                        plt.grid(axis='x')
+                        plt.grid(axis='y')
+                        
+                        # self.downturn_df = self.downturn_df.dropna()
+                        # self.downturn_df.Downturn_pct.plot.bar()
+                        try:
+                            plt.bar(downturn_df.Time, downturn_df.Downturn_pct,width=3)
+                            plt.ylabel('%')
+                            plt.title(f"{symbol} downturn")
+                            plot.add_plot()
+                            plt.close()
+                        except:
+                            plt.title(f"{symbol} NO DATA")
+                            plot.add_plot()
+                            
+                            plt.close()
 
 
-                
-            with doc.create(Figure(position='htbp')) as plot:
-                plt.figure(figsize=(20,15))
-                plt.grid(axis='x')
-                plt.grid(axis='y')
+                    
+                # with doc.create(Figure(position='htbp')) as plot:
+                #     plt.figure(figsize=(20,15))
+                #     plt.grid(axis='x')
+                #     plt.grid(axis='y')
 
-                # self.downturn_df = self.downturn_df.dropna()
-                # self.downturn_df.Downturn_pct.plot.bar()
-                try:
-                    plt.ylabel('Dollars')
-                    plt.title("Max Downturns")
-                    plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
-                    plot.add_plot()
-                    plt.close()
-                except:
-                    plot.add_plot()
-                    plt.title("NO DATA")
-                    plt.close()
+                #     # self.downturn_df = self.downturn_df.dropna()
+                #     # self.downturn_df.Downturn_pct.plot.bar()
+                #     try:
+                #         plt.ylabel('Dollars')
+                #         plt.title("Max Downturns")
+                #         plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
+                #         plot.add_plot()
+                #         plt.close()
+                #     except:
+                #         plot.add_plot()
+                #         plt.title("NO DATA")
+                #         plt.close()
 
 
                 
 
         
-    def count_downturns(self,df):
+    def count_downturns(self,df,symbol):
         df = df.copy()
-        for symbol in df.Symbol.unique():
-            try:
-                search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
-            except:
-                continue
-            df.loc[:,'Downturn_pct'] = 0 
-            df.loc[:,'Downturn_cash'] = 0
+        
+        try:
+            search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
+        except:
+            return
+        df.loc[:,'Downturn_pct'] = 0 
+        df.loc[:,'Downturn_cash'] = 0
 
 
-            crop_df = df.loc[df.Symbol==f'{symbol}']    
-            crop_df = crop_df.reset_index(drop=True,)
-            crop_df = crop_df[["Type","Time",'Time.1','Price',"Price.1","ret","balance",'amount']]
-            crop_df.columns = ['side','start_time','end_time','start_price','end_price','profit','balance','amount']  # type: ignore
-            for row in crop_df.itertuples():
-                start_time= row.start_time
-                end_time = row.end_time
-                start_price = row.start_price
+        crop_df = df.loc[df.Symbol==f'{symbol}']    
+        crop_df = crop_df.reset_index(drop=True,)
+        crop_df = crop_df[["Type","Time",'Time.1','Price',"balance",'amount']]
+        crop_df.columns = ['side','start_time','end_time','start_price','balance','amount']  # type: ignore
+        for idx,row in enumerate(crop_df.values):
 
-                side = row.side
-                
-                amount = row.amount
-                balance = row.balance
-                idx = row.Index
-                down,dollar = self.find_downturns(search_df,start_time,end_time,start_price,side,amount,balance)
-                
-                if down:
-                    df.loc[idx,'Downturn_pct'] = max(down)
-                    df.loc[idx,'Downturn_cash'] = max(dollar)
-                else:
-                    df.loc[idx,'Downturn_pct'] = 0
-                    df.loc[idx,'Downturn_cash'] = 0
+            start_time= row[1]#row.start_time
+            end_time = row[2]#row.end_time
+            start_price = row[3] #row.start_price
+
+            side = row[0]# row.side
             
+            amount = row[5]#row.amount
+            balance = row[4]#row.balance
+            # idx = row.Index
+            down,dollar = self.find_downturns(search_df,start_time,end_time,start_price,side,amount,balance)
+            
+            if down:
+                df.loc[idx,'Downturn_pct'] = max(down)
+                df.loc[idx,'Downturn_cash'] = max(dollar)
+            else:
+                df.loc[idx,'Downturn_pct'] = 0
+                df.loc[idx,'Downturn_cash'] = 0
+        
         return df
         
 
@@ -391,24 +398,24 @@ class PDF:
             
 
     def find_downturns(self,search_df,start_time,end_time,start_price,side,amount,balance):
-        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)]
+        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)][['low','high']]
         downs = []
         dollars = []
         for row in search_set.values:
-            open_price = row[1]
-            high = row[2]
-            low = row[3]
-            close = row[4]
-            volume = row[5]
+            # open_price = row[1]
+            low = row[0]
+            high = row[1]
+            # close = row[4]
+            # volume = row[5]
             # time, open high low close volume
             if side == 'Buy':
                 downs.append(
-                    round((start_price*amount-low*amount)/balance*100,4)
+                    (start_price*amount-low*amount)/balance*100
                 )
                 dollars.append(start_price*amount - low*amount)
             elif side == 'Sell':
                 downs.append(
-                    round((high*amount - start_price*amount)/balance*100,4)
+                    (high*amount - start_price*amount)/balance*100
                 )
                 dollars.append(high*amount - start_price*amount)
                 
