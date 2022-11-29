@@ -1,3 +1,4 @@
+from encodings import search_function
 from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape
 import pylatex as pl
@@ -29,26 +30,19 @@ class PDF:
             df['Profit'] = pd.to_numeric(df['Profit'].str.replace(' ',''))
         except:
             pass
-        plt.rc('axes', titlesize=20)     
-        plt.rc('axes', labelsize=20)    
-        plt.rc('xtick', labelsize=20)    
-        plt.rc('ytick', labelsize=20)    
-        plt.rc('legend', fontsize=20)    
+        plt.rc('axes', titlesize=20)
+        plt.rc('axes', labelsize=20)
+        plt.rc('xtick', labelsize=20)
+        plt.rc('ytick', labelsize=20)
+        plt.rc('legend', fontsize=20)
         plt.rcParams['axes.titlesize'] = 45
 
         min_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].min().sort_values(ascending=False)
         min_down_by_symbol = min_down_by_symbol_pd.to_latex()
 
-
-        
-
-        
-        mean_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].mean().sort_values(ascending=False)
+        mean_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].mean(numeric_only=True).sort_values(ascending=False)
         mean_down_by_symbol = mean_down_by_symbol_pd.to_latex()
 
-        
-
-        
         mean_down_by_day_pd =  df.groupby(df.Time.dt.day_name())['Profit'].mean()
         mean_down_by_day =  mean_down_by_day_pd.to_latex()
 
@@ -64,17 +58,17 @@ class PDF:
         
         min_down_by_hour_pd =  df.groupby(df.Time.dt.hour)['Profit'].min()
         min_down_by_hour =  min_down_by_hour_pd.to_latex()
-
         tmp_df = df.sort_values("Time").copy()
         tmp_df.reset_index(drop=True,inplace=True)
         tmp_df = tmp_df.fillna(0)
+        deposit = tmp_df[:10].loc[tmp_df.Type=='Balance'].sum()['Profit']
         tmp_df['ret'] = tmp_df['Profit']+tmp_df['Commission'] + tmp_df['Swap']
         tmp_df['amount'] = abs(tmp_df['Profit'] /(tmp_df['Price']-tmp_df['Price.1']))
         # tmp_df.loc[0,'ret'] = 0
 
         tmp_df['balance'] = tmp_df['ret'].cumsum()
         tmp_df.loc[0,'ret'] = 0
-        tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/tmp_df['balance'][0] 
+        tmp_df['return_ptc'] = tmp_df['ret'].cumsum()* 100/deposit 
         self.tmp_df = tmp_df
         self.symbols  = tmp_df.groupby("Symbol")
 
@@ -308,121 +302,152 @@ class PDF:
 
         doc.append(NoEscape('\\newpage '))
         with doc.create(Section("Downturns")):
+            dates = []
+            downs = []
+            dollars = []
             for symbol in self.symbols.groups:
                 if type(symbol) == str:
-                    df = self.symbols.get_group(symbol).reset_index(drop=True)
-                    downturn_df = self.count_downturns(df,symbol)
-                    
-                    with doc.create(Figure(position='htbp')) as plot:
-                        plt.figure(figsize=(20,15))
-                        plt.grid(axis='x')
-                        plt.grid(axis='y')
-                        
+                    with doc.create(Subsection(f'{symbol} downturn')):
+                        df = self.symbols.get_group(symbol).reset_index(drop=True)
+                        downturn_df = self.count_downturns(df,symbol)
+                        with doc.create(Figure(position='htbp')) as plot:
+                            plt.figure(figsize=(20,8))
+                            plt.grid(axis='x')
+                            plt.grid(axis='y')
+
                         # self.downturn_df = self.downturn_df.dropna()
                         # self.downturn_df.Downturn_pct.plot.bar()
-                        try:
-                            plt.bar(downturn_df.Time, downturn_df.Downturn_pct,width=3)
-                            plt.ylabel('%')
-                            plt.title(f"{symbol} downturn")
-                            plot.add_plot()
-                            plt.close()
-                        except:
-                            plt.title(f"{symbol} NO DATA")
-                            plot.add_plot()
-                            
-                            plt.close()
+                            try:
+                             
+                                plt.bar(downturn_df.date, downturn_df.Downturn_pct,width=3)
+                                plt.ylabel('%')
+                                plt.title(f"{symbol} downturn%")
+                                plot.add_plot()
+                                plt.close()
+                                dates.extend(downturn_df.date.values)
+                                downs.extend(downturn_df.Downturn_pct.values)
+                                dollars.extend(downturn_df.Downturn_cash.values)
+                            except:
+                                plt.title(f"{symbol} NO DATA")
+                                plot.add_plot()
+
+                                plt.close()
 
 
-                    
-                # with doc.create(Figure(position='htbp')) as plot:
-                #     plt.figure(figsize=(20,15))
-                #     plt.grid(axis='x')
-                #     plt.grid(axis='y')
 
-                #     # self.downturn_df = self.downturn_df.dropna()
-                #     # self.downturn_df.Downturn_pct.plot.bar()
-                #     try:
-                #         plt.ylabel('Dollars')
-                #         plt.title("Max Downturns")
-                #         plt.bar(self.downturn_df.Time, self.downturn_df.Downturn_cash)
-                #         plot.add_plot()
-                #         plt.close()
-                #     except:
-                #         plot.add_plot()
-                #         plt.title("NO DATA")
-                #         plt.close()
+                        with doc.create(Figure(position='htbp')) as plot:
+                            plt.figure(figsize=(20,8))
+                            plt.grid(axis='x')
+                            plt.grid(axis='y')
+
+                     
+                            try:
+                                plt.bar(x=downturn_df.date, height=downturn_df.Downturn_cash,width=3)
+                                plt.ylabel('Dollars')
+                                plt.title(f"{symbol} downturn$")
+                                
+                                plot.add_plot()
+                                plt.close()
+                            except:
+                               plt.title(f"{symbol} NO DATA")
+                               plot.add_plot()
+                               plt.close()
+      
 
 
-                
+                    doc.append(NoEscape('\\newpage '))
+            with doc.create(Subsection("Overall")):
+                with doc.create(Figure(position='htbp')) as plot:
+                    plt.figure(figsize=(20,8))
+                    plt.grid(axis='x')
+                    plt.grid(axis='y')
+                    plt.ylabel("%")
+                    all_dt = pd.DataFrame({"date":dates,"downturn":downs})
+                    group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
+                    plt.bar(x=group_dt.index, height=group_dt.values,width=3)
+                    plot.add_plot()
+                    plt.close()
+                with doc.create(Figure(position='htbp')) as plot:
+                    plt.figure(figsize=(20,8))
+                    plt.grid(axis='x')
+                    plt.grid(axis='y')
+                    plt.ylabel("$")
+                    all_dt = pd.DataFrame({"date":dates,"downturn":dollars})
+                    group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
+                    plt.bar(x=group_dt.index, height=group_dt.values,width=3)
+                    plot.add_plot()
+                    plt.close()
+
 
         
     def count_downturns(self,df,symbol):
         df = df.copy()
+        df = df.loc[df.Symbol!=0]
         
         try:
-            search_df = pd.read_csv(f"../{symbol}.csv",parse_dates=['date'], header=0)
+            search_df = pd.read_csv(f"data/{symbol}.csv",parse_dates=['date'], header=0)
         except:
             return
+
         df.loc[:,'Downturn_pct'] = 0 
         df.loc[:,'Downturn_cash'] = 0
 
 
-        crop_df = df.loc[df.Symbol==f'{symbol}']    
+        crop_df = df.loc[df.Symbol==f'{symbol}']
+        
         crop_df = crop_df.reset_index(drop=True,)
         crop_df = crop_df[["Type","Time",'Time.1','Price',"balance",'amount']]
         crop_df.columns = ['side','start_time','end_time','start_price','balance','amount']  # type: ignore
         for idx,row in enumerate(crop_df.values):
-
+            
             start_time= row[1]#row.start_time
             end_time = row[2]#row.end_time
             start_price = row[3] #row.start_price
 
             side = row[0]# row.side
-            
             amount = row[5]#row.amount
             balance = row[4]#row.balance
             # idx = row.Index
-            down,dollar = self.find_downturns(search_df,start_time,end_time,start_price,side,amount,balance)
-            
+            down,dollar,date = self.find_downturns(search_df,start_time,end_time,start_price,side,amount,balance)
             if down:
-                df.loc[idx,'Downturn_pct'] = max(down)
-                df.loc[idx,'Downturn_cash'] = max(dollar)
+                df.loc[idx,'Downturn_pct'] = down
+                df.loc[idx,'Downturn_cash'] = dollar
+                df.loc[idx, 'date'] = date
             else:
                 df.loc[idx,'Downturn_pct'] = 0
                 df.loc[idx,'Downturn_cash'] = 0
+                df.loc[idx,'date'] = start_time
         
         return df
-        
-
-
-            
 
     def find_downturns(self,search_df,start_time,end_time,start_price,side,amount,balance):
-        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)][['low','high']]
-        downs = []
-        dollars = []
-        for row in search_set.values:
+        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)][['low','high','date']].reset_index()
             # open_price = row[1]
-            low = row[0]
-            high = row[1]
-            # close = row[4]
-            # volume = row[5]
-            # time, open high low close volume
-            if side == 'Buy':
-                downs.append(
-                    (start_price*amount-low*amount)/balance*100
-                )
-                dollars.append(start_price*amount - low*amount)
-            elif side == 'Sell':
-                downs.append(
-                    (high*amount - start_price*amount)/balance*100
-                )
-                dollars.append(high*amount - start_price*amount)
-                
-        return downs,dollars
+        downs= dollars=date = None
+        if not search_set.empty:
+            low = search_set.low.min()
+
+            high = search_set.high.max()
+    
+                # close = row[4]
+                # volume = row[5]
+                # time, open high low close volume
+            if 'buy' in side.lower():
+                downs = (start_price*amount-low*amount)/(balance)*100
+                dollars = (start_price*amount - low*amount)
+                date = search_set.loc[search_set.low.argmin(),'date']
+            elif 'sell' in side.lower():
+                downs = (high*amount - start_price*amount)/(balance)*100
+                dollars = (high*amount - start_price*amount)
+                date = search_set.loc[search_set.high.argmax(),'date']
+            else:
+                return downs,dollars,date
+            
+  
+        return downs,dollars,date
 
 
-                    
+
 
     def generate_pdf(self):    
         geometry_options = {"right": "2cm", "left": "2cm"}
