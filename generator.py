@@ -36,14 +36,14 @@ class PDF:
         plt.rc('legend', fontsize=20)    
         plt.rcParams['axes.titlesize'] = 45
 
-        min_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].min(numeric_only=True).sort_values(ascending=False)
+        min_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].min().sort_values(ascending=False)
         min_down_by_symbol = min_down_by_symbol_pd.to_latex()
 
 
         
 
         
-        mean_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].mean(numeric_only=True).sort_values(ascending=False)
+        mean_down_by_symbol_pd = df.groupby(df.Symbol)['Profit'].mean().sort_values(ascending=False)
         mean_down_by_symbol = mean_down_by_symbol_pd.to_latex()
 
         
@@ -312,7 +312,7 @@ class PDF:
                 if type(symbol) == str:
                     df = self.symbols.get_group(symbol).reset_index(drop=True)
                     downturn_df = self.count_downturns(df,symbol)
-                    print(downturn_df)
+                    
                     with doc.create(Figure(position='htbp')) as plot:
                         plt.figure(figsize=(20,15))
                         plt.grid(axis='x')
@@ -360,7 +360,7 @@ class PDF:
         df = df.copy()
         
         try:
-            search_df = pd.read_csv(f"{symbol}.csv",parse_dates=['date'], header=0)
+            search_df = pd.read_csv(f"../{symbol}.csv",parse_dates=['date'], header=0)
         except:
             return
         df.loc[:,'Downturn_pct'] = 0 
