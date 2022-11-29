@@ -362,21 +362,32 @@ class PDF:
                     plt.grid(axis='x')
                     plt.grid(axis='y')
                     plt.ylabel("%")
-                    all_dt = pd.DataFrame({"date":dates,"downturn":downs})
-                    group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
-                    plt.bar(x=group_dt.index, height=group_dt.values,width=3)
-                    plot.add_plot()
-                    plt.close()
+                    try:
+                        all_dt = pd.DataFrame({"date":dates,"downturn":downs})
+                        group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
+                        plt.bar(x=group_dt.index, height=group_dt.values,width=3)
+                        plot.add_plot()
+                        plt.close()
+                    except:
+                        plt.title(f"ALL NO DATA")
+                        plot.add_plot()
+                        plt.close()
                 with doc.create(Figure(position='htbp')) as plot:
                     plt.figure(figsize=(20,8))
                     plt.grid(axis='x')
                     plt.grid(axis='y')
                     plt.ylabel("$")
-                    all_dt = pd.DataFrame({"date":dates,"downturn":dollars})
-                    group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
-                    plt.bar(x=group_dt.index, height=group_dt.values,width=3)
-                    plot.add_plot()
-                    plt.close()
+                    try:
+                            
+                        all_dt = pd.DataFrame({"date":dates,"downturn":dollars})
+                        group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
+                        plt.bar(x=group_dt.index, height=group_dt.values,width=3)
+                        plot.add_plot()
+                        plt.close()
+                    except:
+                        plt.title(f"ALL NO DATA")
+                        plot.add_plot()
+                        plt.close()
 
 
         
