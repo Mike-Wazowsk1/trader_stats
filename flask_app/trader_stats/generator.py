@@ -28,6 +28,10 @@ class PDF:
         df = self.df.copy()
         try:
             df['Profit'] = pd.to_numeric(df['Profit'].str.replace(' ',''))
+            df['Price'] = pd.to_numeric(df['Price'].str.replace(' ',''))
+            df['Price.1'] = pd.to_numeric(df['Price.1'].str.replace(' ',''))
+            df['Commision'] = pd.to_numeric(df['Comission'].str.replace(' ',''))
+            df['Swap'] = pd.to_numeric(df['Swap'].str.replace(' ',''))
         except:
             pass
         plt.rc('axes', titlesize=20)
@@ -401,7 +405,7 @@ class PDF:
         df = df.loc[df.Symbol!=0]
         
         try:
-            search_df = pd.read_parquet(f"data/{symbol}.parquet",engine="fastparquet")
+            search_df = pd.read_parquet(f"data/{symbol}.parquet",engine="fastparquet",columns=['date','low','high'])
             search_df['date'] = pd.to_datetime(search_df['date'])
             
         except:
@@ -439,7 +443,7 @@ class PDF:
         return df
 
     def find_downturns(self,search_df,start_time,end_time,start_price,side,amount,balance):
-        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)][['low','high','date']].reset_index()
+        search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)].reset_index()
             # open_price = row[1]
         downs= dollars=date = None
         if not search_set.empty:
