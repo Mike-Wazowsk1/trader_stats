@@ -319,7 +319,7 @@ class PDF:
                         # self.downturn_df.Downturn_pct.plot.bar()
                             try:
                              
-                                plt.bar(downturn_df.date, downturn_df.Downturn_pct,width=3)
+                                plt.bar(downturn_df.date, downturn_df.Downturn_pct,width=3) 
                                 plt.ylabel('%')
                                 plt.title(f"{symbol} downturn%")
                                 plot.add_plot()
