@@ -342,7 +342,10 @@ class PDF:
 
                      
                             try:
-                                plt.bar(x=downturn_df.date, height=downturn_df.Downturn_cash,width=3)
+                                print(downturn_df)
+                                group_dt = downturn_df.groupby(downturn_df.date.dt.date)['Downturn_cash'].max()
+                                print(group_dt)
+                                plt.bar(x=group_dt.index, height=group_dt.values,width=3)
                                 plt.ylabel('Dollars')
                                 plt.title(f"{symbol} downturn$")
                                 
@@ -396,7 +399,8 @@ class PDF:
         df = df.loc[df.Symbol!=0]
         
         try:
-            search_df = pd.read_parquet(f"data/{symbol}.parquet",parse_dates=['date'], header=0)
+            search_df = pd.read_parquet(f"data/{symbol}.parquet")
+            search_df['date'] = pd.to_datetime(search_df['date'])
         except:
             return
 
@@ -429,7 +433,7 @@ class PDF:
                 df.loc[idx,'Downturn_cash'] = 0
                 df.loc[idx,'date'] = start_time
         
-        return df
+        return df[['Downturn_pct','Downturn_cash','date']]
 
     def find_downturns(self,search_df,start_time,end_time,start_price,side,amount,balance):
         search_set = search_df.loc[(search_df.date>=start_time) & (search_df.date <= end_time)][['low','high','date']].reset_index()
