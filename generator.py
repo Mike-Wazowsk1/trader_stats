@@ -1,4 +1,5 @@
 from encodings import search_function
+from turtle import width
 from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape
 import pylatex as pl
@@ -83,7 +84,7 @@ class PDF:
         with doc.create(Section('Balance overview')):
             with doc.create(Figure(position='htbp')) as plot:
                 plt.figure(figsize=(20,8))
-                plt.plot(balance_df,linewidth=3,color='#02bfe0')
+                plt.plot(balance_df,linewidth=5,color='#02bfe0')
                 plt.ylabel("Dollars")
                 plt.xlabel("Date")
                 plt.grid(axis='y')
@@ -92,7 +93,7 @@ class PDF:
 
             with doc.create(Figure(position='htbp')) as plot:
                 plt.figure(figsize=(20,8))
-                plt.plot(ptc_df,linewidth=3,color='#02bfe0')
+                plt.plot(ptc_df,linewidth=5,color='#02bfe0')
                 plt.ylabel("%")
                 plt.xlabel("Date")
                 plt.grid(axis='y')
@@ -323,8 +324,12 @@ class PDF:
                         # self.downturn_df = self.downturn_df.dropna()
                         # self.downturn_df.Downturn_pct.plot.bar()
                             try:
-                             
-                                plt.bar(downturn_df.date, downturn_df.Downturn_pct,width=3)
+
+                                if downturn_df.shape[0] == 1:
+                                    plt.axvline(x=downturn_df.date,ymin=0,ymax=downturn_df.Downturn_pct.values,linewidth=1)
+                                else:
+
+                                    plt.bar(downturn_df.date, downturn_df.Downturn_pct,width=3)
                                 plt.ylabel('%')
                                 plt.title(f"{symbol} downturn%")
                                 plot.add_plot()
@@ -347,7 +352,10 @@ class PDF:
 
                      
                             try:
-                                plt.bar(x=downturn_df.date, height=downturn_df.Downturn_cash,width=3)
+                                if downturn_df.shape[0] == 1:
+                                    plt.axvline(x=downturn_df.date,ymin=0,ymax=downturn_df.Downturn_pct.values,linewidth=1)
+                                else:
+                                    plt.bar(x=downturn_df.date, height=downturn_df.Downturn_cash,width=3)
                                 plt.ylabel('Dollars')
                                 plt.title(f"{symbol} downturn$")
                                 
@@ -374,7 +382,10 @@ class PDF:
                         group_df = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
                         
                     #group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
-                        plt.bar(x=group_df.index, height=group_df.values,width=3)
+                        if group_df.shape[0] == 1:
+                            plt.axvline(x=group_df.index,ymin=0,ymax=group_df.values,linewidth=1)
+                        else:
+                            plt.bar(x=group_df.index, height=group_df.values,width=3)
                         plot.add_plot()
                         plt.close()
                     except:
@@ -390,7 +401,10 @@ class PDF:
                             
                         all_dt = pd.DataFrame({"date":dates,"downturn":dollars})
                         group_dt = all_dt.groupby(all_dt.date.dt.date)['downturn'].max()
-                        plt.bar(x=group_dt.index, height=group_dt.values,width=3)
+                        if group_df.shape[0] == 1:
+                            plt.axvline(x=group_df.index,ymin=0,ymax=group_df.values,linewidth=1)
+                        else:
+                            plt.bar(x=group_df.index, height=group_df.values,width=3)
                         plot.add_plot()
                         plt.close()
                     except:
