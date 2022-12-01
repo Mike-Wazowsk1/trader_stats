@@ -29,7 +29,7 @@ h1 {
     
         display: flex;
         justify-content: center;
-        height: 100%;
+        height: 90%;
 }
 .hide{
     display: none;
@@ -80,4 +80,9 @@ label{
   div {
     border-width:0ch;
     border: none;
+
+  }
+  p {
+    margin:0%
+
   }

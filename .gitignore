@@ -3,4 +3,5 @@ data/
 uploads/
 appvenv/
 app.sock
+tmp/
 

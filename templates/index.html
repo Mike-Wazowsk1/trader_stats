@@ -16,17 +16,31 @@
             </head>
     <body class="gradient-custom">
         <main>
-            <h1 class="display-1"><strong>Analysis report_test</strong> </h1>
+            
+            <h1 class="display-1"><strong>Analysis report</strong> </h1>
             <div align="center">
-                <label for="inputTag" class="display-2 hover" align="center">
-                    Select File
+                <label for="inputTag" class="display-3 hover" align="center">
+                    Select Files
+                </label>
+                <br>
+                <p class="display-8">or</p>
+
+                <label for="inputdata" class="display-3 hover" align="center">
+                    Select data
                 </label>
 
                     <form method=post enctype=multipart/form-data>
                     <input id="inputTag" type=file name=file class="hide"> 
+                    <input id="inputdata" type=file name=data class="hide"> 
                     <!-- <button type=button value=Upload> -->
-                    <button type="submit" class="display-2 hover" value=Upload>Get report</button>
+                    <button type="submit" class="display-2 hover" value=Upload>Get report/Upload data</button>
                 </form>
+                {% for message in get_flashed_messages() %}
+                <p class="display-6">{{ message }}</p>
+                {% endfor %}
+
+                
+
               </div>
         </main>
 
